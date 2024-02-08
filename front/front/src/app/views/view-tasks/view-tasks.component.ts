@@ -6,23 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './view-tasks.component.scss',
 })
 export class ViewTasksComponent implements OnInit {
+  // variable contenant la liste des tâches
   tasks: any;
 
+
+  // avant le chargement complet de la page on appele la fonction qui écupère les tâches pour pouvoir les afficher
   ngOnInit() {
     this.getTasks();
   }
 
+  // méthode qui récupère toutes les tâches
   getTasks() {
-    fetch('http://localhost:3000/api/tasks')
-      .then((response) => {
-        response.json().then((data) => {
-          console.log(data);
-          
-          this.tasks = data;
-        })
-      })
+    fetch('http://localhost:3000/api/tasks').then((response) => {
+      response.json().then((data) => {
+        console.log(data);
+
+        this.tasks = data;
+      });
+    });
   }
 
+  // méthode qui supprime une tâche
   delete(id: string) {
     return new Promise((resolve, reject) => {
       fetch('http://localhost:3000/api/tasks/' + id, { method: 'DELETE' })
@@ -38,8 +42,4 @@ export class ViewTasksComponent implements OnInit {
         });
     });
   }
-
- 
- 
-
 }

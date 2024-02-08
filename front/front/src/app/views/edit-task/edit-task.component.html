@@ -2,3 +2,6 @@
 <br>
 
 <span>Description</span><input type="text"[(ngModel)]="task.description"/>
+<br>
+<!--<span>Etat(true or false)</span><input type="text" [(ngModel)]="task.completed"/> -->
+<button type="submit" [routerLink]="['/viewTasks']" routerLinkActive="router-link-active" (click)="update(task.id)">Valider</button>
