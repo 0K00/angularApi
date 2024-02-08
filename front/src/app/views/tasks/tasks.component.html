@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Compléter</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td *ngIf="task.completed == false">
+                <img src="../../assets/cancel.svg"/>
+            </td>            
+            <td *ngIf="task.completed == true">
+                <img src="../../assets/check.svg"/>
+            </td>            
+            <td>
+                <button class="customButton" [routerLink]="'/tasks/update/' + task.id">
+                    <img src="../../assets/edit.svg">
+                </button>
+            </td>
+            <td>
+                <button type="button" class="customButton" (click)="deleteTask(task.id)">
+                    <img src="../../assets/delete.svg">
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

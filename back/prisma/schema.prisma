@@ -11,7 +11,7 @@ generator client {
 }
 
 model Tasks {
-  id Int @id @default(autoincrement())
+  id String @default(nanoid(8)) @id
   title String
   description String
   completed Boolean @default(false)
