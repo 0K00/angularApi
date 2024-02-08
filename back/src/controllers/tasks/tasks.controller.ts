@@ -1,3 +1,12 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-02-08 09:32:41                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-02-08 09:51:14                               *
+ * @FilePath              : angularApi/back/src/controllers/tasks/tasks.controller.ts*
+ * @CopyRight             : MerBleueAviation                                  *
+ *****************************************************************************/
+
 /* Imports */
 import {
     Controller,
@@ -9,16 +18,7 @@ import {
     Delete,
     HttpException,
     HttpStatus,
-    UseGuards,
   } from "@nestjs/common";
-/******************************************************************************
- * @Author                : 0K00<qdouvillez@gmail.com>                        *
- * @CreatedDate           : 2024-02-08 09:32:41                               *
- * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
- * @LastEditDate          : 2024-02-08 09:37:00                               *
- * @FilePath              : angularApi/back/src/controllers/tasks/tasks.controller.ts*
- * @CopyRight             : MerBleueAviation                                  *
- *****************************************************************************/
 
 /* Services */
 import { PrismaService } from "src/prisma.service";
