@@ -25,7 +25,7 @@ import { PrismaService } from "src/prisma.service";
 /***/
 
 interface ITask {
-    id: number,
+    id: string,
     title: string,
     description: string,
     completed: boolean
@@ -52,7 +52,7 @@ export class TasksController {
      * @return - Task data
      */
     @Get("/:id")
-    async getById(@Param("id") id: number): Promise<ITask> {
+    async getById(@Param("id") id: string): Promise<ITask> {
         let task = await this.prisma.tasks.findFirst({where: {id: id}});
         if (task) return task;
         else throw new HttpException("Not Found", HttpStatus.NOT_FOUND);
@@ -80,7 +80,7 @@ export class TasksController {
      * @return - Update Task
      */
     @Put(":id")
-    async update(@Param("id") id: number, @Body() body: ITask): Promise<ITask> {
+    async update(@Param("id") id: string, @Body() body: ITask): Promise<ITask> {
         let task =  await this.prisma.tasks.update({
         where: {id: id},
         data: body
@@ -96,7 +96,7 @@ export class TasksController {
      * @return - Message 
      */
     @Delete("/:id")
-    async delete(@Param("id") id: number): Promise<{message: string}> {
+    async delete(@Param("id") id: string): Promise<{message: string}> {
         await this.prisma.tasks.delete({where: {id: id}});
         return {message: `Label ${id} has been removed`};
     }

@@ -1,5 +1,6 @@
 <h1>Tasks Manager</h1>
 <br>
 <div class="container">
-  <span><a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a></span> 
+  <span><a [routerLink]="['/viewTasks']" routerLinkActive="router-link-active" >Home</a></span> <br>
+  <Button type="button" class="btnCreate" (click)="create()"  [routerLink]="['/editTask']" routerLinkActive="router-link-active">Créer une tâche</Button>
 </div>
