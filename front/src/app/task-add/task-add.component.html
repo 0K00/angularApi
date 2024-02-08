@@ -1,0 +1,19 @@
+<div>
+    <h2>Add Task</h2>
+    <form (ngSubmit)="addTask()">
+      <div>
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput" [(ngModel)]="newTask.title" name="title" required>
+      </div>
+      <div>
+        <label for="descriptionInput">Description:</label>
+        <textarea id="descriptionInput" [(ngModel)]="newTask.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label for="completedCheckbox">Completed:</label>
+        <input type="checkbox" id="completedCheckbox" [(ngModel)]="newTask.completed" name="completed">
+      </div>
+      <button type="submit">Add Task</button>
+    </form>
+  </div>
+  
