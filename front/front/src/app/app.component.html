@@ -1,0 +1,10 @@
+<button type="button" class="creerTask"></button>
+
+<h2>Tâches :</h2>
+
+<div *ngFor="let task of tasks">
+  {{ task.title }}
+</div>
+
+
+<router-outlet />
