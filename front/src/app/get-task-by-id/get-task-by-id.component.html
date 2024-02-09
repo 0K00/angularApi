@@ -1,0 +1,12 @@
+<div>
+    <label for="taskIdInput">Enter Task ID:</label>
+    <input type="number" id="taskIdInput" [(ngModel)]="taskId">
+    <button (click)="getTaskById()">Get Task</button>
+</div>
+
+<div *ngIf="task">
+    <p>Id: {{ task.id }}</p>
+    <p>title: {{ task.title }}</p>
+    <p>description: {{ task.description }}</p>
+    <p>completed: {{ task.completed }}</p>
+</div>
